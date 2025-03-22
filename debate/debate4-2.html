@@ -18,10 +18,10 @@
     <div class="container">
         <div class="time pro" id="time_pro">
             <div class="title">찬성 측 3번 토론자</div>
-            <div class="timer_pro" id="timer">
-                <div class="mask3p"></div>
+            <div class="timer_pro2" id="timer">
+                <div class="mask2p"></div>
             </div>
-            <div class="time-info"><span id="total_time_pro">3:00</span></div>
+            <div class="time-info"><span id="total_time_pro">2:00</span></div>
         </div>
     </div>
     <button onclick="previous()">이전</button>
@@ -31,7 +31,7 @@
     <button onclick="next()">다음</button>
 
     <script>
-        let timePro = 3 * 60;
+        let timePro = 2 * 60;
         let timerInterval;
         let runningPro = false;
 
@@ -48,7 +48,7 @@
             runningPro = true;
             document.getElementById('btn_pro').disabled = true;
             document.getElementById('timer').style.animationPlayState = 'running';
-            document.querySelector('.mask3p').style.animationPlayState = 'running';
+            document.querySelector('.mask2p').style.animationPlayState = 'running';
 
             timerInterval = setInterval(() => {
                 if (timePro > 1) {
@@ -68,17 +68,17 @@
             runningPro = false;
             document.getElementById('btn_pro').disabled = false;
             document.getElementById('timer').style.animationPlayState = 'paused';
-            document.querySelector('.mask3p').style.animationPlayState = 'paused';
+            document.querySelector('.mask2p').style.animationPlayState = 'paused';
             updateDisplay();
         }
 
         function resetTimer() {
             stopTimer();
-            timePro = 3 * 60;
+            timePro = 2 * 60;
             updateDisplay();
 
             const timerElement = document.getElementById('timer');
-            const maskElement = document.querySelector('.mask3p');
+            const maskElement = document.querySelector('.mask2p');
     
             timerElement.style.animation = 'none';
             maskElement.style.animation = 'none';
